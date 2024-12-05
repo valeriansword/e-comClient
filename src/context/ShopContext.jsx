@@ -25,7 +25,7 @@ function ShopContextProvider({children}) {
       setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}));
       if(user?user.token:" "){
         const id=user.user.id
-        axios.post("http://localhost:3000/user/addToCart",{itemId,id},{
+        axios.post("https://e-comserver-udnf.onrender.com/user/addToCart",{itemId,id},{
           headers:{
              "Content-Type":"application/json",
            
@@ -38,7 +38,7 @@ function ShopContextProvider({children}) {
       setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}));
       if(user?user.token:" "){
         const id=user.user.id
-        axios.post("http://localhost:3000/user/removeFromCart",{itemId,id},{
+        axios.post("https://e-comserver-udnf.onrender.com/user/removeFromCart",{itemId,id},{
           headers:{
              "Content-Type":"application/json",
            
@@ -75,7 +75,7 @@ function ShopContextProvider({children}) {
     const [newProducts,setNewProducts]=useState([]);
 
     const fetchAllProducts=()=>{
-        axios.get("http://localhost:3000/products").
+        axios.get("https://e-comserver-udnf.onrender.com/products").
         then(res=>{
             console.log(res.data.products);
             setNewProducts(res.data.products);
@@ -96,7 +96,7 @@ function ShopContextProvider({children}) {
     useEffect(()=>{
       if(user?user.token:false){
         const id=user.user.id
-        axios.post("http://localhost:3000/user/getCart",{id},{
+        axios.post("https://e-comserver-udnf.onrender.com/user/getCart",{id},{
           headers:{
              "Content-Type":"application/json",
            

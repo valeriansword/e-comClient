@@ -36,7 +36,7 @@ function AddProduct() {
         if (closeimage) formData.append('products', closeimage);
     
         // Return the promise to allow chaining
-        return axios.post("http://localhost:3000/upload", formData, {
+        return axios.post("https://e-comserver-udnf.onrender.com/upload", formData, {
             headers: {
                 "Content-Type": "multipart/form-data",
             },
@@ -65,7 +65,7 @@ function AddProduct() {
                 const productData = { ...products, images: uploadedImageUrls };
     
                 // Step 2: Submit Product Data to Backend
-                return axios.post("http://localhost:3000/products/addProduct", productData);
+                return axios.post("https://e-comserver-udnf.onrender.com/products/addProduct", productData);
             })
             .then((res) => {
                 if (res.status === 200 && res.data.success) {

@@ -16,7 +16,7 @@ function ListProduct() {
    const {newProducts,fetchAllProducts}=useContext(ShopContext)
     const handleDelete=(id)=>{
         
-        axios.post("http://localhost:3000/products/deleteProduct",{id}).
+        axios.post("https://e-comserver-udnf.onrender.com/products/deleteProduct",{id}).
         then(res=>{
             console.log(res.data);
         }).catch(err=>{
