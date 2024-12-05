@@ -19,7 +19,7 @@ function Login() {
       alert("enter form details");
       return ;
     }
-    axios.post("http://localhost:3000/user/login",formData,{
+    axios.post("https://e-comserver-udnf.onrender.com/user/login",formData,{
       headers:{
         "Content-Type":"application/json"
       }
@@ -39,7 +39,7 @@ function Login() {
       alert("enter form details");
       return ;
     }
-    axios.post("http://localhost:3000/user/signup",formData,{
+    axios.post("https://e-comserver-udnf.onrender.com/user/signup",formData,{
       headers:{
         "Content-Type":"application/json"
       }
