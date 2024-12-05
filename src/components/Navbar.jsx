@@ -38,6 +38,14 @@ function Navbar() {
 
         {/* Right section for desktop */}
         <div className="flex gap-2 items-center max-md:hidden">
+        <Link to="/admin">
+            <button
+              className="border-2 ml-[20px] border-black rounded-md px-[15px] hover:rounded-[30px] hover:bg-black hover:text-white"
+              onClick={() => {setMenu("login");localStorage.removeItem("userInfo")}}
+            >
+             admin
+            </button>
+          </Link>
           <Link to="/login">
             <button
               className="border-2 ml-[20px] border-black rounded-md px-[15px] hover:rounded-[30px] hover:bg-black hover:text-white"
